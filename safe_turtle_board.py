@@ -16,12 +16,12 @@ class SafeTurtleBoard(Turtle):
         self.goto(0, 270)
         self.hideturtle()
         self.update_safe_turtle_board()
-        self.loading_point_daddy()
+        self.loading_point_leader()
 
     def update_safe_turtle_board(self):
         self.clear()
         if self.level == 0:
-            self.loading_point_daddy()
+            self.loading_point_leader()
         self.goto(0, 270)
         self.write(f'Turtles Saved:{self.level} High Score: {self.most_saved_turtles}', align=ALIGNMENT, font=FONT)
 
@@ -50,7 +50,7 @@ class SafeTurtleBoard(Turtle):
         self.save_the_chosen_one()
 
 
-    def loading_point_daddy(self):
+    def loading_point_leader(self):
         filepath = os.path.join(os.path.dirname(__file__), self.david_point_file)
         try:
             with open(filepath, 'r') as f:
